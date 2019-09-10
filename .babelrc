@@ -1,16 +1,7 @@
 {
     "presets": [
-        "env", 
-        "react"
+        "@babel/preset-env", 
+        "@babel/preset-react"
     ],
-    "plugins": [
-        [
-            "css-modules-transform", 
-            {
-                "generateScopedName": "[sha1:hash:hex:4]__[local]",
-                "extractCss": "./resources/css/all.css",
-                "devMode": true
-            }
-        ]
-    ]
-}
+    "plugins": ["@babel/plugin-proposal-class-properties"]
+  }
