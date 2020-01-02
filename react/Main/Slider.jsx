@@ -5,7 +5,6 @@ import Slide from './Slide';
 
 // * Resources
 import styles from '../../resources/css/style.scss';
-import images from '../../resources/images/*/*/*.png';
 
 class Slider extends Component {
 
@@ -20,10 +19,9 @@ class Slider extends Component {
         }
     }
 
-    changeSlide = () => {
+    /* changeSlide = () => {
         let max = this.props.sliders.length,
             next = (this.state.active + 1) == max ? 0 : this.state.active + 1;
-        console.log(this.state.timer);
         this.setState(state => ({
             next: next,
             fade: true,
@@ -67,17 +65,17 @@ class Slider extends Component {
         this.setState(state => ({
             interval: setInterval(this.changeSlide, state.timer),
         }));
-    }
+    } */
 
     render() {
          return(
-            <div onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} className={styles.slider} style={{height: this.props.height}}>
+            <div /* onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave} */ className={styles.slider} style={{height: this.props.height}}>
                 <div>
                     {this.props.sliders.map((v, k) => {
                         return (
-                            <Slide  key={v.name}
-                                    cover={images[v.type][v.name].cover} 
-                                    logo={images[v.type][v.name].logo} 
+                            <Slide  key={k}
+                                    cover={v.cover} 
+                                    logo={v.logo} 
                                     next={`${this.state.next == k ? ` ${styles.next}`:""}`} 
                                     fade={`${(this.state.fade && (this.state.active == k)) ? ` ${styles.fade}`:''}`} 
                                     active={`${(!this.state.fade && (this.state.active == k)) ? ` ${styles.active}`:""}`} 
