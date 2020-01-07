@@ -1,2 +1,2 @@
 # pufflix
-A demo website to watch movies online.
+A demo website where to stream movies & tv shows.
