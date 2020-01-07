@@ -12,13 +12,13 @@
   "author": "puffysticks",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.6.0",
-    "@babel/preset-react": "^7.0.0",
-    "parcel-bundler": "^1.12.3",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "parcel-bundler": "^1.12.4",
     "parcel-plugin-url-loader": "^1.3.1",
-    "sass": "^1.23.0-module.beta.1"
+    "sass": "^1.24.2"
   },
   "dependencies": {
     "autoprefixer": "^9.6.1",
