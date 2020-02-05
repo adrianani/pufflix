@@ -813,7 +813,6 @@ input, textarea, button {
             & > div {
                 display: flex;
                 justify-content: space-between;
-                flex-wrap: wrap;
 
                 .recommendedArticle {
                     display: flex;
@@ -839,6 +838,7 @@ input, textarea, button {
                                 width: 64px;
                                 height: 64px;
                                 margin-right: 15px;
+                                background-size: cover;
                             }
 
                             button {
@@ -1236,14 +1236,54 @@ input, textarea, button {
                 }
             }
 
+            .articlesList {
+
+                main {
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                }
+
+                .article {
+                    margin-right: 170px;
+
+                    .overlay {
+                        opacity: 1;
+                        pointer-events: auto;
+                        left: 100%;
+                        background-color: transparent;
+                        justify-content: flex-start;
+                        padding: 5px 20px;
+
+                        .title {
+                            font-size: 18px;
+                        }
+
+                        .duration, .genres, .release {
+                            font-size: 14px;
+                        }
+                    }
+                    
+                    &:not(:first-child):not(:nth-child(2)) {
+                        margin-top: 25px;
+                    }
+                }
+            }
+
             .recommendedArticles {
 
                 & > div {
 
-                    .recommendedArticle {
+                    .recommendedArticle  {
 
-                        .avatar {
-                            display: none;
+                        main {
+
+                            & > div {
+
+                                .avatar {
+                                    width: 45px;
+                                    height: 45px;
+                                }
+                            }
                         }
                     }
                 }
@@ -1265,71 +1305,125 @@ input, textarea, button {
     }
 }
 
-@media screen and (max-width: 712px) { 
-
+@media screen and (max-width: 676px) {
+    
     #app {
-        
-        & > div { 
+     
+        & > div {
+            padding: 0 15px;
+
+            .mainWrapper {
+                padding: 15px 0;
+
+                h4 {
+                    font-size: 17px;
+                }
+
+                h5 {
+                    font-size: 14px;
+                }
+            }
+            
+            .articlesList {
+
+                main {
+                    flex-wrap: unset;
+                    flex-direction: column;
+
+                    .article {
+                        margin-right: 0;
+                        width: 150px;
+                        height: 210px;
+                        padding-top: 0;
+
+                        &:nth-child(2) {
+                            margin-top: 25px;
+                        }
+
+                        .overlay {
+                            width: calc(100vw - 180px);
+                        }
+                    }
+                }
+            }
 
             .recommendedArticles {
 
                 & > div {
                     flex-direction: column;
-                    justify-content: unset;
 
                     .recommendedArticle {
                         width: 100%;
-                        align-items: center;
                         flex-direction: row;
-                        margin-bottom: 15px;
+                        align-items: center;
+
+                        &:not(:first-child) {
+                            margin-top: 25px;
+                        }
+
+                        main {
+
+                            & > div {
+                                
+                                button {
+
+                                    font-size: 12px;
+                                }
+                            }
+
+                            span {
+                                display: block;
+                                font-size: 14px;
+                                margin-bottom: 30px;
+                            }
+                        }
 
                         .poster {
                             width: 150px;
-                            height: 150px;
-                        }
-
-                        .avatar {
-                            display: block;
+                            margin-bottom: 0;
                         }
                     }
                 }
             }
-
-            .articlesList {
-                main {
-                    flex-wrap: wrap;
-
-                    .article {
-                        width: calc(50% - 15px);
-                        padding-top: 63.274%;
-
-                        &:not(:nth-last-child(3)):not(:nth-last-child(2)) {
-                            margin-bottom: 30px;
-                        }
-                    }
-                }
-            }
-
         }
     }
 }
 
-@media screen and (max-width: 500px) {
-    
+@media screen and (max-width: 478px) {
     #app {
-
+        
         & > div {
+            
+            .bannerSection {
+
+                .banner {
+
+                    .logo {
+                        left: 15px;
+                        width: 252px;
+                        height: 100px;
+                    }
+                }
+            }
+
+            .recommendedArticles {
+
+                & > div {
+
+                    .recommendedArticle {
+                        
+                        .poster {
+                            margin-right: 12px;
+                        }
+                    }
+                }
+            }
 
             footer {
-
                 .footerLinks {
-                    display: grid;
-                    grid-template-columns: 100%;
-                    justify-items: start;
-                    
-                    .footerLists {
-                        width: 185px;
-                    }
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: unset;
                 }
             }
         }
